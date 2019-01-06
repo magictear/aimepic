@@ -1,4 +1,6 @@
-﻿# AimePic 基于express+nodejs的壁纸站,页面仿Bootstrap Themes网站。
+﻿<div><img src="https://github.com/magictear/aimepic/blob/master/public/images/icon/favicon.png" width="128" height="128" style="margin: 0 auto"/></div>
+
+# AimePic 基于express+nodejs的壁纸站,页面仿Bootstrap Themes网站。
 
 > 技术栈：express + nodejs + mongoose
 
@@ -25,9 +27,6 @@ npm start
 
 ```
 
-
-<img src="https://github.com/magictear/aimepic/blob/master/public/images/icon/Aime-logo.png" width="250" height="250"/>
-
 ## 功能
 
 *Add landing Page
@@ -40,16 +39,16 @@ npm start
 ## 部分截图
 
 ### 
-<img src="https://github.com/magictear/aimepic/blob/master/screenshots/index-1.png" width="600"/>
+<img src="https://github.com/magictear/aimepic/blob/master/Screenshots/index-1.png" width="600" style="margin: 0 auto"/>
 ### 
-<img src="https://github.com/magictear/aimepic/blob/master/screenshots/index-2.png" width="600"/>
+<img src="https://github.com/magictear/aimepic/blob/master/Screenshots/index-2.png" width="600" style="margin: 0 auto"/>
 ### 
-<img src="https://github.com/magictear/aimepic/blob/master/screenshots/home-1.png" width="600"/>
+<img src="https://github.com/magictear/aimepic/blob/master/Screenshots/home-1.png" width="600" style="margin: 0 auto"/>
 ### 
-<img src="https://github.com/magictear/aimepic/blob/master/screenshots/home-2.png" width="600"/>
+<img src="https://github.com/magictear/aimepic/blob/master/Screenshots/home-2.png" width="600" style="margin: 0 auto"/>
 ### 
-<img src="https://github.com/magictear/aimepic/blob/master/Screenshots/category-celebs.png" width="600"/>
+<img src="https://github.com/magictear/aimepic/blob/master/Screenshots/category-celebs.png" width="600" style="margin: 0 auto"/>
 ### 
-<img src="https://github.com/magictear/aimepic/blob/master/screenshots/new-theme.png" width="600"/>
+<img src="https://github.com/magictear/aimepic/blob/master/Screenshots/new-theme.png" width="600" style="margin: 0 auto"/>
 ### 
-<img src="https://github.com/magictear/aimepic/blob/master/screenshots/signin.png" width="600"/># aimepic
+<img src="https://github.com/magictear/aimepic/blob/master/Screenshots/signin.png" width="600" style="margin: 0 auto"/>
