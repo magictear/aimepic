@@ -1,0 +1,78 @@
+﻿extends layout
+
+block content
+  #myModal.modal
+    a#imgFull(href='',target='_blank')
+      img#myImg.modal-content(src='')    
+  script. 
+    var modal = document.getElementById('myModal');
+    var img = document.getElementById('myImg');
+    jQuery(document).ready(function(){
+      jQuery(".btnmod").click(function(){
+      var sr=jQuery(this).prev().children().attr("src");
+      jQuery('#myImg').attr("src",sr);
+      jQuery('#imgFull').attr("href",sr);
+      modal.style.display = "block";
+      });
+    });
+  main#main.site-main.main
+    section.section
+      .container  
+        .theme-cards-holder
+          .theme-cards__heading          
+            div              
+              h4.theme-cards__title Enjoy wallpapers created by #{wallpapers[0].username}.
+              p.text-gray-soft And don't forget to subscribe.            
+            .col-md-4   
+              form(action='', method='get')
+                .d-flex.justify-content-md-end
+                  select#inlineFormCustomSelect.form-control.text-gray-soft(name='orderby')
+                    option() Sort Order
+                    option(value='price') Sort by price: ↑
+                    option(value='price-desc') Sort by price: ↓
+                    option(value='_id') Sort by id:↑
+                    option(value='_id_desc') Sort by id:↓  
+                    option(value='name') Sort by username: ↑a-z
+              script.
+                jQuery(document).ready(function () {
+                jQuery("#inlineFormCustomSelect").change(function () {
+                jQuery(this).closest("form").submit();  
+                });
+                });  
+          ul.row
+            - wallpapers.forEach(function(wallpaper){
+            - var pd='/product/'
+            li.col-md-4.col-6
+              .theme-card
+                .theme-card__body
+                  a.d-block(href=pd+wallpaper._id)
+                    img.theme-card__img.wp-post-image(width='400', height='300', src=wallpaper.image, alt='', sizes='(max-width: 400px) 100vw, 400px')
+                  button.theme-card__body__overlay.btn.btn-brand.btn-sm(class='btnmod',data-toggle='modal', data-target='#myModal') Live preview
+                .theme-card__footer
+                  .theme-card__footer__item
+                    a.theme-card__title.mr-1(href=pd+wallpaper._id) #{wallpaper.name}
+                    p.theme-card__info
+                    ul.prod_cats_list
+                      li
+                        p by
+                          |
+                          |
+                          a(href='/user/'+wallpaper.username) #{wallpaper.username}
+                      li
+                        p |
+                          |
+                          |
+                          a(href='/'+wallpaper.classification) #{wallpaper.classification}
+                    p
+                  .theme-card__footer__item
+                    p.theme-card__price
+                      span.woocommerce-Price-amount.amount
+                        span.woocommerce-Price-currencySymbol ￥
+                        | #{wallpaper.price}
+                    ul.rating
+                      li.rating__item
+                      li.rating__item
+                      li.rating__item
+                      li.rating__item
+                      li.rating__item
+            -});

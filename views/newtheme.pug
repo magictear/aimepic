@@ -1,0 +1,47 @@
+﻿extends layout
+
+block content
+  main#main.site-main.main
+    section.section
+      .container
+        .row
+          .container.container--medium
+            img.img-fluid.mx-auto.d-block.mb-5(src='/images/icon/favicon.png', alt='') 
+            - if (user){
+            form#newthemeform(name='newthemeform', action='/newtheme', method='post')
+              .form-group
+                label(for='themename') Wallpaper Name
+                input#themename.form-control(type='text', name='name',placeholder='Wallpaper Name', value='', size='20')
+              .form-group
+                label(for='url') Wallpaper Url
+                input#url.form-control(type='text', name='image',placeholder='Wallpaper Url', value='', size='20')
+              .form-group
+                label(for='classification') Classification
+                select(name='classification')
+                  option(value='architecture') Architecture
+                  option(value='celebrities') Celebrities
+                  option(value='drawing-art') Drawing Art
+                  option(value='movies') Movies
+                  option(value='girls') Girls
+                  option(value='nature') Nature
+              .form-group
+                label(for='price') Price
+                input#price.form-control(type='text', name='price',placeholder='Price/￥ 输入数字', value='', size='20')          
+              .form-group
+                label(for='description') Description
+                textarea#description.form-control(name='description', type='text', rows='7', cols='150' )
+              .form-group
+                input#submit.btn.btn-brand.btn-block.mb-4(type='submit', name='submit', value='Submit')
+            - }
+            - if (!user){
+            h2.text-center.text-gray-soft
+              | You have to Signin to add pics. 
+              a(href='/signin') Sign In
+            h3.text-center.text-gray-soft
+              | Don't have an account yet? 
+              a(href='/signup') Sign up
+            -}
+            
+
+
+

@@ -1,0 +1,76 @@
+﻿extends layout
+
+block content
+  main#main.site-main.main
+    section.section
+      .container
+        .row
+          section.hero.hero--xs.w-100.pt-0
+            .container
+              h1.display-2.text-bold.mb-3 Wallpapers for Business.
+              h5.text-gray-soft.text-regular
+                | Wallpaper creators in the world.
+          section.section.pt-3.official-themes-page.pb-0
+            .screenshots-masonry
+              img.d-none.d-lg-block(src='/images/icon/theme-masonry.jpg')
+              img.d-block.d-lg-none(src='/images/icon/theme-masonry-mobile.jpg')
+            .container
+              .row.align-items-center.justify-content-center.mb-1.mt-5.mb-md-5.text-center
+                .col-md-3.col-6.mb-5.mb-md-0.border-right
+                  h6.mb-1 Average Rating
+                  .d-flex.align-items-center.justify-content-center
+                    ul.rating.d-inline.mb-0.mr-2
+                      li.rating__item.rating__item--active
+                      li.rating__item.rating__item--active
+                      li.rating__item.rating__item--active
+                      li.rating__item.rating__item--active
+                      li.rating__item.rating__item--active
+                    p.fs-13.text-gray-soft.d-inline 4.9/5
+                .col-md-3.col-6.mb-5.mb-md-0.border-right
+                  h6.mb-1 Our Guarantee
+                  p.fs-13.text-gray-soft 100% money back.
+                .col-md-3.col-6.mb-5.mb-md-0.border-right
+                  h6.mb-1 Free Updates
+                  p.fs-13.text-gray-soft Never pay for an update.
+                .col-md-3.col-6.mb-5.mb-md-0
+                  h6.mb-1 Free Support
+                  p.fs-13.text-gray-soft 6 months included 
+              .row.align-items-center.justify-content-between.py-4
+                .col-xl-5.col-lg-6.pt-4
+                  h1.mb-2.text-bold.w-75 Built from the ground up.
+                  p.fs-16.text-gray-soft
+                    | Each theme is architected as an collection, built for a specific set of problems. This means not only extending the base design, but also adding completely new components, utilities, and plugins.
+                .col-lg-12.mb-5
+                  img.img-fluid.mx-auto.framework-progression-graphic.d-none.d-lg-block(src='/images/icon/framework-progression.png', alt='')
+                  img.img-fluid.mx-auto.framework-progression-graphic.d-block.d-lg-none(src='/images/icon/framework-progression-mobile.jpg', alt='')
+              .row.align-items-center.justify-content-between
+                .col-lg-6.mt-5.order-2.order-lg-1
+                  img.img-fluid.mx-auto.d-block(src='/images/icon/review-process.svg', alt='')
+                .col-lg-5.order-1.order-lg-2
+                  h1.mb-2.text-bold.w-75 Every theme gets reviewed by us.
+                  p.fs-16.text-gray-soft
+                    | The Boostrap team reviews every new theme and update against a set of guidelines we wrote. These cover tons of factors including design, component flexibility, class naming, directory structure, build tooling, plugin reusability…the list goes on and on.
+              .row.align-items-center.justify-content-between.mt-5.my-lg-5.pt-5
+                .col-lg-5.mb-3.mb-lg-5
+                  h1.mb-2.text-bold.w-75 Build tools and full documention.
+                  p.fs-16.text-gray-soft
+                    | Components, plugins, and build tools are all thoroughly documented with live examples and markup for easier use and customization—just like Bootstrap itself. Not comfortable diving that deep? No worries, you just use the compiled CSS and examples pages!
+                  a.btn.btn-brand(href='/docs/') Explore the Dashboard docs
+                .col-lg-6.mb-4.mt-4
+                  img.img-fluid.mx-auto.d-block(src='/images/icon/terminal.jpg', alt='')
+              .row.align-items-center.justify-content-between.mb-5.pt-5.mb-lg-3.text-center
+                .col-sm-4.px-sm-4.pb-5
+                  img(src='/images/icon/components-icon.svg')
+                  h5.my-2.text-bold Components and examples
+                  p.text-gray-soft
+                    | Each theme features new components built to match Bootstrap's level of quality and re-usability.
+                .col-sm-4.px-sm-4.pb-5
+                  img(src='/images/icon/sliders-icon.svg')
+                  h5.my-2.text-bold Tons of variables
+                  p.text-gray-soft
+                    | Themes inherit their style from custom variables, like Bootstrap, so basic customization is easy.
+                .col-sm-4.px-sm-4.pb-5
+                  img(src='/images/icon/wrenches-icon.svg')
+                  h5.my-2.text-bold Source files
+                  p.text-gray-soft
+                    | Each theme includes all the source and compiled files, making deep customization possible.

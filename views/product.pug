@@ -1,0 +1,132 @@
+﻿extends layout
+
+block content
+  main#main.site-main.main
+    section.section
+      .container
+        .row
+          #container
+            #content(role='main')
+              h1.d-lg-block.mb-3 #{wallpaper.name}
+              .row
+                .col-lg-8.mb-md-0.mb-3
+                  #product-13681.post-13681.product.type-product.status-publish.has-post-thumbnail.product_cat-landing-corporate.first.instock.downloadable.shipping-taxable.purchasable.product-type-simple
+                    .feature-screenshot
+                      div(data-columns='4', style='opacity: 1; transition: opacity .25s ease-in-out;')
+                        .woocommerce-product-gallery__image(data-thumb=wallpaper.image)
+                          a(href=wallpaper.image)
+                            img.attachment-large_crop.size-large_crop(width='1200', height='676', src=wallpaper.image, alt='', title=wallpaper.image)
+                      a.feature-screenshot__overlay(target='_blank', href=wallpaper.image)
+                        button.btn.btn-inverted Launch live preview
+                    .d-flex.justify-content-between.align-items-center.has-border
+                      - var pre='/product/',aft='/edit',del='?_method=delete';
+                      ul.nav.sub-nav.sub-nav--has-border(role='tablist')
+                        li.nav-item
+                          a.nav-link.sub-nav-link.active(data-toggle='tab', href='#description-tab', role='tab') Description                       
+                      - if (user){
+                      -if(user.username==wallpaper.username){
+                      a(class='btn btn-primary' href=pre+wallpaper._id+aft) Edit
+                      |
+                      |
+                      form( action=pre+wallpaper._id+del, method='post')   
+                        button(class='btn btn-danger') Delete
+                      -}
+                      -}
+                    .tab-content
+                      #description-tab.tab-pane.fade.show.mt-2.mt-lg-5.active(role='tabpanel')
+                        .theme-description
+                          p
+                            strong #{wallpaper.description}
+                          hr
+                          h2
+                            | 40% OFF – Vip Today 
+                            img.emoji(draggable='false', alt='😀', src='https://s.w.org/images/core/emoji/2.3/svg/1f600.svg')
+                      #reviews-tab.tab-pane.fade(role='tabpanel')
+                        .theme-review__submission-prompt.d-flex.justify-content-between.align-items-center
+                          #start_review_msg
+                            h6.mb-0 You must purchase this theme to leave a review.
+                            p.text-gray.fs-14
+                              | If you have already purchased it, 
+                              a(href='/signin/') login
+                              |  to leave a review.
+                .col-lg-4.d-lg-block.pl-xs-0.pl-lg-5
+                  .d-flex.justify-content-between.align-items-center.mb-2
+                    .dropdown
+                      a.dropdown-toggle.link--dark(js-price-dropdown='true', href='#', data-toggle='dropdown', aria-haspopup='true', aria-expanded='false') Choose discont
+                      .dropdown-menu.dropdown-menu--xl.dropdown-menu--centered.dropdown-menu--has-triangle
+                        button.dropdown-block-item.switch_price_prod(data-type='Standard discont', data-price=wallpaper.price, data-price_label=wallpaper.price, data-label='Standard discont')
+                          .d-flex.justify-content-between.align-items-center.mb-2
+                            span Standard discont
+                            span.d-flex.align-items-center
+                              span.woocommerce-Price-amount.amount
+                                span.woocommerce-Price-currencySymbol ￥
+                                | #{wallpaper.price*0.8}
+                          ul.fs-13.text-gray-soft.mb-2
+                            li Use for a single product
+                            li Non-Vip users
+                          p.fs-11.text-gray-soft
+                            | For the Vip discont 
+                            a(href='/signin/') Signin
+                        .dropdown-divider
+                        button.dropdown-block-item.switch_price_prod(data-type='Vip discont', data-price=wallpaper.price, data-price_label=wallpaper.price, data-label='Vip discont')
+                          .d-flex.justify-content-between.align-items-center.mb-2
+                            span Vip discont
+                            span.d-flex.align-items-center ￥#{wallpaper.price*0.4}
+                          ul.fs-13.text-gray-soft.mb-2
+                            li Use for a single product
+                            li Vip users allowed
+                          p.fs-11.text-gray-soft
+                            | For the Vip disocont 
+                            a(href='/signin/') Signin
+                    h2.d-flex.align-items-center(js-price-value='main_price_div')
+                      span.woocommerce-Price-amount.amount
+                        span.woocommerce-Price-currencySymbol ￥
+                        | #{wallpaper.price}
+                  form.btn-block(action='/cart/', method='POST')
+                    input(type='hidden', js-license-type='license_type', name='license_type', value='Standard discont')
+                    input(type='hidden', name='add-to-cart', value=wallpaper.price)
+                    button.btn.btn-brand.btn-block.btn-checkout(type='submit')
+                      span.btn-text Add to cart
+                  a.btn.btn-outline-brand.btn-block.mb-4.ml-0(target='_blank', href=wallpaper.image) Live preview
+                  .theme-purchases
+                    .theme-purchases__item
+                      a.theme-purchases__item__inner.text-center(data-toggle='tab', href='#reviews-tab', role='tab', js-handle='review-toggler')
+                        ul.rating.justify-content-center
+                          li.rating__item
+                          li.rating__item
+                          li.rating__item
+                          li.rating__item
+                          li.rating__item
+                        p (0 reviews)
+                      .theme-purchases__item__inner.text-center
+                        h5.mb-0
+                          i.bootstrap-themes-icon-cart
+                          | 3
+                        p Purchases
+                    .theme-purchases__item
+                      .theme-purchases__item__inner.px-0
+                        ul.guarantees
+                          li
+                            i.bootstrap-themes-icon-check-circle
+                            | 100% money back guarantee
+                  .theme-description__list
+                    .theme-description__list__item
+                      span.theme-description__item__title Category
+                      a(href='/'+wallpaper.classification) #{wallpaper.classification}
+                    .theme-description__list__item
+                      a.profile-author(href='/user/'+wallpaper.username)
+                        .profile-author__logo
+                          img.profile-author__img(src='/images/icon/favicon-300x300.png', alt='')
+                        .profile-author__author__description
+                          p Created by
+                          h6.profile-logo__author__title #{wallpaper.username}
+                    .theme-description__list__item      
+                      ul.list-social.justify-content-end
+                          li.list-social__item Share:
+                          li.list-social__item
+                            a.bootstrap-themes-icon-facebook-squared.list-social__link(target='_blank', href='http://www.facebook.com/')
+                          li.list-social__item
+                            a.bootstrap-themes-icon-pinterest-squared.list-social__link(target='_blank', href='http://pinterest.com/')
+                          li.list-social__item
+                            a.bootstrap-themes-icon-twitter.list-social__link(target='_blank', href='http://twitter.com/')      
+

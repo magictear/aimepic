@@ -1,0 +1,55 @@
+﻿extends layout
+
+block content
+  main#main.site-main.main
+    section.section
+      .container
+        .row
+          .container.container--medium
+            img.img-fluid.mx-auto.d-block.mb-5(src='https://themes.getbootstrap.com/wp-content/themes/bootstrap-marketplace/assets/images/elements/bootstrap-logo.svg', alt='') 
+            - var pre='/product/',aft='?_method=PUT';
+            - if (user){
+            -if(user.username==wallpaper.username){
+            form#editform(name='editform', action=pre+wallpaper._id+aft, method='post')
+              .form-group
+                label(for='themename') Wallpaper Name
+                input#themename.form-control(type='text', name='name', value=wallpaper.name, size='20')
+              .form-group
+                label(for='url') Wallpaper Url
+                input#url.form-control(type='text', name='image', value=wallpaper.image, size='20')
+              .form-group
+                label(for='price') Price
+                input#price.form-control(type='text', name='price',placeholder='Price/￥ 输入数字', value=wallpaper.price, size='20')          
+              .form-group
+                label(for='classification') Classification
+                select(name='classification')
+                  option(value='architecture') Architecture
+                  option(value='celebrities') Celebrities
+                  option(value='drawing-art') Drawing Art
+                  option(value='movies') Movies
+                  option(value='girls') Girls
+                  option(value='nature') Nature
+
+              .form-group
+                label(for='description') Wallpaper Description
+                textarea#description(name='description', type='text', rows='7', cols='150' ) #{wallpaper.description}
+              .form-group
+                input#submit.btn.btn-brand.btn-block.mb-4(type='submit', name='submit', value='Submit')
+            -}else{
+            h2.text-center.text-gray-soft
+              | You don'thave permission to edit this pic. 
+              a(href='/home') Back to home page.
+            -}
+            - }
+            - else{
+            h2.text-center.text-gray-soft
+              | You have to Signin to edit pics. 
+              a(href='/signin') Sign In
+            h3.text-center.text-gray-soft
+              | Don't have an account yet? 
+              a(href='/signup') Sign up
+            -}
+            
+
+
+

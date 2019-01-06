@@ -1,0 +1,160 @@
+doctype html
+html
+  head
+    meta(charset='UTF-8')
+    meta(name='viewport', content='width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no')
+    title Aime Pictures
+    script(src='/javascripts/jquery.min.js')
+    script(src='/javascripts/popper.min.js')
+    script(src='/javascripts/bootstrap.min.js')
+    meta(name='description', content='AimePic is a collection of the best Wallpapers include Categories Girls, Movies, celebrities, Nature, architecture, and more.')
+    
+    style(type='text/css').
+      img.wp-smiley,
+      img.emoji {
+      display: inline !important;
+      border: none !important;
+      box-shadow: none !important;
+      height: 1em !important;
+      width: 1em !important;
+      margin: 0 .07em !important;
+      vertical-align: -0.1em !important;
+      background: none !important;
+      padding: 0 !important;
+      }
+
+      /* Modal Content (image) */
+      .modal-content {
+      margin: auto;
+      display: block;
+      width: 100%;
+      
+      }
+
+      .modal {
+      display: none; /* Hidden by default */
+      position: fixed; /* Stay in place */
+      z-index: 1; /* Sit on top */
+      padding-top: 20px; /* Location of the box */
+      padding-left: 70px;
+      padding-right: 70px;
+      top: 0;
+      width: 100%; /* Full width */
+      height: 100%; /* Full height */
+      overflow: auto; /* Enable scroll if needed */
+      background-color: rgb(0,0,0); /* Fallback color */
+      background-color: rgba(0,0,0,0.9); /* Black w/ opacity */
+      }
+      /* Add Animation */
+      .modal-content{    
+          -webkit-animation-name: zoom;
+          -webkit-animation-duration: 0.4s;
+          animation-name: zoom;
+          animation-duration: 0.4s;
+      }
+
+      @-webkit-keyframes zoom {
+          from {-webkit-transform: scale(0)} 
+          to {-webkit-transform: scale(1)}
+      }
+
+      @keyframes zoom {
+          from {transform: scale(0.1)} 
+          to {transform: scale(1)}
+      }
+
+      .woocommerce-product-gallery{ opacity: 1 !important; }
+
+      .recentcomments a{display:inline !important;padding:0 !important;margin:0 !important;}
+    link(rel='stylesheet', href='/stylesheets/style.css')
+    	
+  body.home.blog.woocommerce.dokan-theme-dokan(data-gr-c-s-loaded='true')
+    nav.navbar.navbar-expand-lg.navbar-light
+      .container
+        a.navbar-brand(href='/')
+          span.navbar-toggler-icon
+            img(src='/images/icon/Aime-logo.png', alt='index')
+        |
+        a.navbar-brand(href='/home') Home
+        .d-flex.ml-auto
+          button.navbar-toggler(type='button', data-toggle='collapse', data-target='#globalNavbar', aria-controls='globalNavbar', aria-expanded='false', aria-label='Toggle navigation')
+            span.navbar-toggler-icon
+        #globalNavbar.collapse.navbar-collapse
+          form#search.form-inline.form-navbar.my-2.my-lg-0.order-2(action='',method='get')   
+            input.form-control(name='s', type='text', placeholder='Search')
+          ul.navbar-nav.mr-auto.order-1
+            li.nav-item.dropdown
+              a#navbarDropdownMenuLink.nav-link.dropdown-toggle(href='#', data-toggle='dropdown', aria-haspopup='true', aria-expanded='false') Categories
+              .dropdown-menu(aria-labelledby='navbarDropdownMenuLink')
+                .navbar-collapse.navbar-top-collapse
+                  ul#menu-top-menu.nav.navbar-nav
+                    li#menu-item-601.menu-item.menu-item-type-taxonomy.menu-item-object-product_cat.menu-item-601
+                      a(title='Admin', href='/celebrities') Celebrities
+                    li#menu-item-603.menu-item.menu-item-type-taxonomy.menu-item-object-product_cat.menu-item-603
+                      a(title='Landing', href='/nature') Nature
+                    li#menu-item-1537.menu-item.menu-item-type-taxonomy.menu-item-object-product_cat.menu-item-1537
+                      a(title='Application', href='/drawing-art') Drawing Art
+                    li#menu-item-602.menu-item.menu-item-type-taxonomy.menu-item-object-product_cat.menu-item-602
+                      a(title='E-Commerce', href='/movies') Movies
+                    li#menu-item-1538.menu-item.menu-item-type-taxonomy.menu-item-object-product_cat.menu-item-1538
+                      a(title='Portfolio', href='/girls') Girls
+                    li#menu-item-1539.menu-item.menu-item-type-taxonomy.menu-item-object-product_cat.menu-item-1539
+                      a(title='Specialty', href='/architecture') Architecture
+            li.nav-item
+              a.nav-link(href='/official-themes/') Why Our Themes?
+            li.nav-item
+              a.nav-link(href='/sell/') Sell themes
+            li.nav-item
+              a.nav-link(href='/newtheme/') New theme
+          ul.navbar-nav.d-none.d-lg-flex.ml-2.order-3
+            - if (user){
+            li.nav-item
+              a.nav-link(href='/user/'+user.username)  #{user.username}
+            li.nav-item
+              a.nav-link(href='/logout') Logout
+            - }
+            - if (!user){
+            li.nav-item
+              a.nav-link(href='/signin/') Sign in
+            li.nav-item
+              a.nav-link(href='/signup/') Sign up
+            - }
+          ul.navbar-nav.d-lg-none
+            li.nav-item-divider
+            li.nav-item
+              a.nav-link(href='/signin/') Sign in
+            li.nav-item
+              a.nav-link(href='/signup/') Sign up  
+            li.nav-item
+              a.nav-link(href='/logout') Logout   
+
+    block content
+    	
+  footer.footer
+    .container
+      .footer__inner
+        .footer__item
+          form#mc-embedded-subscribe-form(action='/subscribe/', method='post', name='mc-embedded-subscribe-form', target='_blank', novalidate='')
+            .d-md-flex.justify-content-between.align-items-center
+              .form-group
+                h5.mb-1 Get new themes in your inbox!
+                .form-text.mt-0 New themes or big discounts. Never spam.
+              #signup_footer.d-flex.align-items-start
+                .form-group.w-100.mr-2
+                  div(style='position: absolute; left: -5000px;', aria-hidden='true')
+                    input(type='text', name='subscribe', tabindex='-1', value='')
+                  input#mce-EMAIL.footer__email-input.form-control.form-control--muted(name='EMAIL', type='email', aria-describedby='footerEmail', placeholder='Email address')
+                input#mc-embedded-subscribe.btn.btn-brand(type='submit', value='Subscribe', name='subscibe')
+        .footer__item.d-lg-flex.justify-content-lg-between.align-items-lg-center
+          ul#menu-footer.nav.sub-nav.footer__sub-nav
+            li#menu-item-1194.menu-item.menu-item-type-custom.menu-item-object-custom.menu-item-1194
+              a(title='Help Center', href='#') Help Center
+            li#menu-item-119.menu-item.menu-item-type-post_type.menu-item-object-page.menu-item-119
+              a(title='Terms of Service', href='#') Terms of Service
+            li#menu-item-117.menu-item.menu-item-type-post_type.menu-item-object-page.menu-item-117
+              a(title='Licenses', href='#') Licenses
+          p.hidden-sm-down.d-none.d-lg-block
+            | Trying to redownload a theme? Use our 
+            a(href='/redownload/') redownload page.
+    
+        

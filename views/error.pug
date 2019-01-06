@@ -1,0 +1,14 @@
+﻿extends layout
+
+block content
+  header(class='jumbotron')
+
+  main#main.site-main.main
+    section.section
+      .container
+        .row
+          .container
+            if (message)
+            h3 #{message}
+            if (error)
+            h3 #{error} 

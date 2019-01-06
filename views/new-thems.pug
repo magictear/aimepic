@@ -1,0 +1,21 @@
+﻿extends layout
+
+block content
+  div(class='container')
+    header(class='jumbotron')
+      div(class='container')
+          h1= title
+          p Welcome to #{title}
+          p
+            a(class='btn btn-primary btn-large' href='/') 主页
+            |
+            |
+            a(class='btn btn-primary btn-large' href='users') 用户
+    div(class='container')
+      h3 添加新图片
+      form(action='users' method='POST')
+        input(type='text' name='name' palceholder='name')
+        input(type='text' name='image' palceholder='image url')
+        button submit
+    
+    

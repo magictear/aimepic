@@ -1,0 +1,27 @@
+﻿extends layout
+
+block content
+  main#main.site-main.main
+    section.section
+      .container
+        .row
+          .container.container--mini
+            img.img-fluid.mx-auto.d-block.mb-5(src='/images/icon/favicon.png', alt='')
+            form#loginform(name='loginform', action='/signin', method='post')
+              .form-group
+                label(for='user_login') Username
+                input#user_login.form-control(type='text', name='username',placeholder='Username', value='', size='20')
+              .form-group
+                label(for='user_pass') Password
+                a.form-sublink(href='signup/lost-password/') Forgot password?
+                input#user_pass.form-control(type='password', name='password',placeholder='Password', value='', size='20')
+              p.login-remember
+                label
+                  input#rememberme(name='rememberme', type='checkbox', value='forever')
+                  |  Remember Me
+              .form-group
+                input#wp-submit.btn.btn-brand.btn-block.mb-4(type='submit', name='wp-submit', value='Sign In')
+                input(type='hidden', name='redirect_to', value='signup')
+            p.small.text-center.text-gray-soft
+              | Don't have an account yet? 
+              a(href='/signup/') Sign up

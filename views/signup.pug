@@ -1,0 +1,64 @@
+﻿extends layout
+
+block content
+  main#main.site-main.main
+    section.section
+      .container
+        .row
+          .container.container--xs
+            .woocommerce
+              #signup_div_wrapper
+                img.img-fluid.mx-auto.d-block.mb-3(src='/images/icon/favicon.png', alt='')
+                h1.mb-1.text-center Sign up
+                p.fs-14.text-gray.text-center.mb-5 Redownload themes, get support, and review themes.
+                form#loginform(name='loginform', action='/signin', method='post')
+                  p.woocommerce-FormRow.woocommerce-FormRow--first.form-row.form-row-first
+                    label(for='username')
+                      | User Name 
+                      span.required *
+                    input(type='text', name='username', placeholder='User Name', required='')
+                  .invalid-feedback This field is required
+                  p
+                  p.woocommerce-form-row.woocommerce-form-row--wide.form-row.form-row-wide
+                    label(for='email')
+                      | Email address 
+                      span.required *
+                    input#email.woocommerce-Input.woocommerce-Input--text.input-text.form-control(type='email', name='email',placeholder='Email', value='', required='')
+                  .invalid-feedback This field is required
+                  p
+                  p.woocommerce-form-row.woocommerce-form-row--wide.form-row.form-row-wide
+                    label(for='password')
+                      | Password 
+                      span.required *
+                    input(type='password', name='password', placeholder='Password',required='')
+                  .invalid-feedback This field is required
+                  p
+                  // Spam Trap
+                  div(style='left: -999em; position: absolute;')
+                    label(for='trap') Anti-spam
+                    input#trap(type='text', name='email_2', tabindex='-1', autocomplete='off')
+                  p.form-row.form-group.user-role
+                    label.radio
+                      input(type='radio', name='role', value='customer', checked='checked')
+                      |         I am a customer
+                    label.radio
+                      input(type='radio', name='role', value='seller')
+                      |         I am a vendor
+                  .invalid-feedback This field is required
+                  p
+                  p.woocomerce-FormRow.form-row
+                    //input#woocommerce-register-nonce(type='hidden', name='woocommerce-register-nonce', value='9dd78409bb')
+                    //input(type='hidden', name='_wp_http_referer', value='/home/')
+                    input.btn.btn-brand.btn-block.btn-lg.mb-4.mt-3(type='submit', style='margin:0;', name='register', value='Sign Up')
+                  .invalid-feedback This field is required
+                  p
+                p.text-gray-soft.text-center.small.mb-2
+                  | By clicking "Sign up" you agree to our 
+                  a(href='/terms/') Terms of Service
+                  | .
+                p.text-gray-soft.text-center.small.mb-2
+                  | Already have an account? 
+                  a(href='/signin/') Sign in
+                p.text-gray-soft.text-center.small
+                  | Trying to sign up to sell themes? 
+                  a(href='/sell/') Apply to be a seller.
