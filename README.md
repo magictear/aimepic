@@ -26,7 +26,7 @@ npm start
 ```
 
 
-<img src="https://github.com/magictear/aimepic/tree/master/public/images/icon/Aime-logo.png" width="250" height="250"/>
+<img src="https://github.com/magictear/aimepic/blob/master/public/images/icon/Aime-logo.png" width="250" height="250"/>
 
 ## 功能
 
@@ -40,16 +40,16 @@ npm start
 ## 部分截图
 
 ### 
-<img src="https://github.com/magictear/aimepic/tree/master/screenshots/index-1.png" width="600"/>
+<img src="https://github.com/magictear/aimepic/blob/master/screenshots/index-1.png" width="600"/>
 ### 
-<img src="https://github.com/magictear/aimepic/tree/master/screenshots/index-2.png" width="600"/>
+<img src="https://github.com/magictear/aimepic/blob/master/screenshots/index-2.png" width="600"/>
 ### 
-<img src="https://github.com/magictear/aimepic/tree/master/screenshots/home-1.png" width="600"/>
+<img src="https://github.com/magictear/aimepic/blob/master/screenshots/home-1.png" width="600"/>
 ### 
-<img src="https://github.com/magictear/aimepic/tree/master/screenshots/home-2.png" width="600"/>
+<img src="https://github.com/magictear/aimepic/blob/master/screenshots/home-2.png" width="600"/>
 ### 
-<img src="https://github.com/magictear/aimepic/tree/master/screenshots/category-celebs.png" width="600"/>
+<img src="https://github.com/magictear/aimepic/blob/master/Screenshots/category-celebs.png" width="600"/>
 ### 
-<img src="https://github.com/magictear/aimepic/tree/master/screenshots/new-theme.png" width="600"/>
+<img src="https://github.com/magictear/aimepic/blob/master/screenshots/new-theme.png" width="600"/>
 ### 
-<img src="https://github.com/magictear/aimepic/tree/master/screenshots/signin.png" width="600"/># aimepic
+<img src="https://github.com/magictear/aimepic/blob/master/screenshots/signin.png" width="600"/># aimepic
