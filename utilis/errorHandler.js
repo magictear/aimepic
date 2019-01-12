@@ -1,11 +1,4 @@
-﻿/*
- * @Author: AngelaDaddy 
- * @Date: 2018-02-03 13:30:42 
- * @Last Modified by: AngelaDaddy
- * @Last Modified time: 2018-02-03 14:18:15
- * @Description: error handlers
-  */
-module.exports = (app) => {
+﻿module.exports = (app) => {
     app.use(function (req, res, next) {
         var err = new Error('Not Found')
         err.status = 404

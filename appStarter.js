@@ -1,11 +1,4 @@
-﻿/*
- * @Author: AngelaDaddy 
- * @Date: 2018-02-03 13:35:36 
- * @Last Modified by: AngelaDaddy
- * @Last Modified time: 2018-02-03 13:56:55
- * @Description: middlware统一归放
-  */
-const path = require('path')
+﻿const path = require('path')
 const cookieParser = require('cookie-parser')
 const bodyParser = require('body-parser')
 const logger = require('morgan')

@@ -19,10 +19,14 @@ block content
     section.section
       .container  
         .theme-cards-holder
-          .theme-cards__heading          
-            div              
+          .theme-cards__heading 
+            - if(!wallpapers[0]) {         
+            div
+              h2.theme-cards__title You have no wallpapers yet,go to newtheme page to add one.
+            - } else{
+            div
               h4.theme-cards__title Enjoy wallpapers created by #{wallpapers[0].username}.
-              p.text-gray-soft And don't forget to subscribe.            
+              p.text-gray-soft And don't forget to subscribe.               
             .col-md-4   
               form(action='', method='get')
                 .d-flex.justify-content-md-end
@@ -38,7 +42,8 @@ block content
                 jQuery("#inlineFormCustomSelect").change(function () {
                 jQuery(this).closest("form").submit();  
                 });
-                });  
+                }); 
+            - }      
           ul.row
             - wallpapers.forEach(function(wallpaper){
             - var pd='/product/'

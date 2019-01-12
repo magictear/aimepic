@@ -7,7 +7,7 @@ block content
         .row
           .container.container--mini
             img.img-fluid.mx-auto.d-block.mb-5(src='/images/icon/favicon.png', alt='')
-            form#loginform(name='loginform', action='/signin', method='post')
+            form#signinform(name='signinform', action='/signin', method='post')
               .form-group
                 label(for='user_login') Username
                 input#user_login.form-control(type='text', name='username',placeholder='Username', value='', size='20')
